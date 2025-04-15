@@ -35,7 +35,7 @@ export default function Home() {
         <img
           src={images[currentIndex]}
           alt="slider"
-          className="w-full  object-contain  rounded-lg transition-all duration-500"
+          className="w-full h-full object-contain  rounded-lg transition-all duration-500"
         />
         <button
           onClick={prevSlide}
@@ -56,28 +56,27 @@ export default function Home() {
   <section>
     <div className='mt-8'>
       <span className='text-4xl text-secondary flex justify-center'>Products</span>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4 lg:grid-cols-4 gap-17  overflow-hidden p-4'>
-      <div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border border shadow-gray-500 hover:shadow-black  text-gray-700 gap-4 shadow-md">
-  <div class="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-secondary  gap-4 bg-clip-border  text-white shadow-lg shadow-blue-gray-500/40">
-    <img className='object-contain'
+      <div className="grid grid-cols-1 gap-y-10 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-4">
+      <div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border border shadow-gray-500 hover:shadow-black text-gray-700 gap-4 shadow-md">
+  <div className="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-secondary gap-4 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+    <img className="w-full h-full object-cover"
       src={img4}
       alt="img-blur-shadow"
-      layout="fill"
     />
   </div>
-  <div class="p-6">
-    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+  <div className="p-6">
+    <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
       UI/UX Review Check
     </h5>
-    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+    <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
       The place is close to Barceloneta Beach and bus stop just 2 min by walk
       and near to "Naviglio" where you can enjoy the main night life in
       Barcelona.
     </p>
   </div>
-  <div class="p-6 pt-0">
+  <div className="p-6 pt-0">
     <button
-      class="select-none rounded-lg bg-secondary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md hover:shadow-secondary transition-all hover:shadow-lg  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      className="select-none rounded-lg bg-secondary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md hover:shadow-secondary transition-all hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       type="button"
       data-ripple-light="true"
     >
@@ -85,56 +84,26 @@ export default function Home() {
     </button>
   </div>
 </div>
-<div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border border shadow-gray-500 hover:shadow-black  text-gray-700 gap-4 shadow-md">
-  <div class="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-secondary gap-4 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-    <img className='object-contain'
+<div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border border shadow-gray-500 hover:shadow-black text-gray-700 gap-4 shadow-md">
+  <div className="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-secondary gap-4 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+    <img className="w-full h-full object-cover"
       src={img4}
       alt="img-blur-shadow"
-      layout="fill"
     />
   </div>
-  <div class="p-6">
-    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+  <div className="p-6">
+    <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
       UI/UX Review Check
     </h5>
-    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+    <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
       The place is close to Barceloneta Beach and bus stop just 2 min by walk
       and near to "Naviglio" where you can enjoy the main night life in
       Barcelona.
     </p>
   </div>
-  <div class="p-6 pt-0">
+  <div className="p-6 pt-0">
     <button
-      class="select-none rounded-lg bg-secondary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:shadow-lg hover:shadow-secondary  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-      type="button"
-      data-ripple-light="true"
-    >
-      Read More
-    </button>
-  </div>
-</div>
-     
-<div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border  border shadow-gray-500 hover:shadow-black text-gray-700 gap-4 shadow-md">
-  <div class="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-secondary gap-4 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-    <img className='object-contain'
-      src={img4}
-      alt="img-blur-shadow"
-      layout="fill"
-    />
-  </div>
-  <div class="p-6">
-    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-      UI/UX Review Check
-    </h5>
-    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-      The place is close to Barceloneta Beach and bus stop just 2 min by walk
-      and near to "Naviglio" where you can enjoy the main night life in
-      Barcelona.
-    </p>
-  </div>
-  <div class="p-6 pt-0">
-    <button
-      class="select-none rounded-lg bg-secondary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:shadow-lg hover:shadow-secondary focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      className="select-none rounded-lg bg-secondary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg hover:shadow-secondary focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       type="button"
       data-ripple-light="true"
     >
@@ -143,27 +112,54 @@ export default function Home() {
   </div>
 </div>
      
-<div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border  border shadow-gray-500 hover:shadow-black text-gray-700 gap-4 shadow-md">
-  <div class="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-secondary gap-4 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
-    <img className='object-contain'
+<div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border border shadow-gray-500 hover:shadow-black text-gray-700 gap-4 shadow-md">
+  <div className="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-secondary gap-4 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+    <img className="w-full h-full object-cover"
       src={img4}
       alt="img-blur-shadow"
-      layout="fill"
     />
   </div>
-  <div class="p-6">
-    <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+  <div className="p-6">
+    <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
       UI/UX Review Check
     </h5>
-    <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+    <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
       The place is close to Barceloneta Beach and bus stop just 2 min by walk
       and near to "Naviglio" where you can enjoy the main night life in
       Barcelona.
     </p>
   </div>
-  <div class="p-6 pt-0">
+  <div className="p-6 pt-0">
     <button
-      class="select-none rounded-lg bg-secondary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md  transition-all hover:shadow-secondary focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      className="select-none rounded-lg bg-secondary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg hover:shadow-secondary focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-ripple-light="true"
+    >
+      Read More
+    </button>
+  </div>
+</div>
+     
+<div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border border shadow-gray-500 hover:shadow-black text-gray-700 gap-4 shadow-md">
+  <div className="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-secondary gap-4 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+    <img className="w-full h-full object-cover"
+      src={img4}
+      alt="img-blur-shadow"
+    />
+  </div>
+  <div className="p-6">
+    <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+      UI/UX Review Check
+    </h5>
+    <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+      The place is close to Barceloneta Beach and bus stop just 2 min by walk
+      and near to "Naviglio" where you can enjoy the main night life in
+      Barcelona.
+    </p>
+  </div>
+  <div className="p-6 pt-0">
+    <button
+      className="select-none rounded-lg bg-secondary py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md transition-all hover:shadow-lg hover:shadow-secondary focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       type="button"
       data-ripple-light="true"
     >
