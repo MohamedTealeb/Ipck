@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import Navbar from '../../Components/Shared/Navbar';
+import { useParams } from 'react-router-dom';
 
 export default function Product_Det() {
   const [image, setImage] = useState(1);
+  const {id}=useParams()
 
   return<>
   <Navbar />

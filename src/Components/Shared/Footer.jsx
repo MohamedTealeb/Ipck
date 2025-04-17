@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faFacebook, faDribbble, faGithub } from '@fortawesome/free-brands-svg-icons'
+import {  faFacebook, faWhatsapp,faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 export default function Footer() {
   return <>
@@ -14,19 +14,23 @@ export default function Footer() {
         <h5 className="text-lg mt-0 mb-2 text-blueGray-300">
           Find us on any of these platforms, we respond 1-2 business days.
         </h5>
-        <div className="mt-6 lg:mb-0 flex mb-6">
-          <button className="bg-white text-sky-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <FontAwesomeIcon icon={faTwitter} />
-          </button>
-          <button className="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <FontAwesomeIcon icon={faFacebook} />
-          </button>
-          <button className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <FontAwesomeIcon icon={faDribbble} />
-          </button>
-          <button className="bg-white text-gray-800 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <FontAwesomeIcon icon={faGithub} />
-          </button>
+        <div className="mt-6 lg:mb-0  flex mb-6">
+          <a href="https://wa.me/01097700082" target="_blank" rel="noopener noreferrer">
+            <button className="bg-white text-green-500 hover:bg-black  shadow-lg font-normal cursor-pointer h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+              <FontAwesomeIcon icon={faWhatsapp} />
+            </button>
+          </a>
+          <a href="https://www.facebook.com/ipekmattress" target="_blank" rel="noopener noreferrer">
+            <button className="bg-white text-blue-600 hover:bg-black  shadow-lg font-normal cursor-pointer h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+              <FontAwesomeIcon icon={faFacebook} />
+            </button>
+          </a>
+          <a href="https://www.instagram.com/ipek.mattress" target="_blank" rel="noopener noreferrer">
+            <button className="bg-white text-pink-400 hover:bg-black shadow-lg font-normal cursor-pointer h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+              <FontAwesomeIcon icon={faInstagram} />
+            </button>
+          </a>
+         
         </div>
       </div>
       
@@ -35,8 +39,7 @@ export default function Footer() {
     <div className="flex flex-wrap items-center md:justify-between justify-center">
       <div className="w-full md:w-4/12 px-4 mx-auto text-center">
         <div className="text-sm text-blueGray-400 font-semibold py-1">
-          Copyright © <span id="get-current-year">2024</span><a href="https://www.creative-tim.com/product/notus-js" className="text-blueGray-400 hover:text-white" target="_blank"/> Notus JS by
-          <a href="https://www.creative-tim.com?ref=njs-profile" className="text-blueGray-400 hover:text-white">Creative Tim</a>.
+          Copyright © <span id="get-current-year">2025</span>
         </div>
       </div>
     </div>
