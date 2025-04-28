@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import logo from '../../assets/304305481_470478301760187_6739104333513463181_n.jpg'
+import { useDispatch } from 'react-redux'
+import Login from '../../Modules/Login/Login'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-
+ 
   return <>
   
-<nav className="font-sans flex flex-wrap items-center justify-between py-2 px-6 shadow w-full">
+<nav className="font-sans  flex flex-wrap items-center justify-between py-2 px-6 shadow w-full">
   
   <div className="relative flex items-center">
  
@@ -17,7 +19,7 @@ export default function Navbar() {
 
   <button
     onClick={() => setIsOpen(!isOpen)}
-    className="sm:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary"
+    className="sm:hidden md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary"
     aria-label="Toggle menu"
   >
     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -28,12 +30,12 @@ export default function Navbar() {
   <div
     className={`${
       isOpen ? 'block' : 'hidden'
-    } w-full sm:flex sm:items-center sm:w-auto`}
+    } w-full sm:flex sm:items-center  sm:w-auto`}
   >
-    <div className="flex flex-col sm:flex-row sm:items-center mt-4 sm:mt-0 sm:ml-auto">
+    <div className="flex flex-col  sm:flex-row sm:items-center mt-4 sm:mt-0 sm:ml-auto">
       <a
         href="/products"
-        className="block sm:inline-block text-base no-underline text-secondary hover:text-gray-800 ml-0 sm:ml-2 px-1 py-2 sm:py-0"
+        className="block font-bold sm:inline-block text-base no-underline text-secondary hover:text-gray-800 ml-0 sm:ml-2 px-1 py-2 sm:py-0"
       >
         Products
       </a>

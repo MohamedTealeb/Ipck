@@ -6,18 +6,18 @@ export default function Products() {
   const [modalImg, setModalImg] = useState(null);
 
   return <>
-  
- <Navbar/>
-<div class="mx-auto bg-secondary container px-6 xl:px-0 ">
+  <div className=''>
+  <Navbar/>
+<div class=" bg-secondary overflow-x-hidden container px-6 xl:px-0 ">
   
 
-  <div class="flex flex-col">
+  <div class="flex flex-col overflow-hidden">
     <div class="flex flex-col justify-center">
       <div class="relative">
         <img class="hidden sm:block w-full" src={imge} alt="sofa" />
         <img class="sm:hidden w-full" src={imge} alt="sofa" />
         <div class="absolute sm:bottom-8 bottom-4 pr-10 sm:pr-0 left-4 sm:left-8 flex justify-start items-start">
-          <p class="text-3xl sm:text-4xl font-semibold leading-9 text-white">Range Comfort Sofas</p>
+          <p class="text-3xl  sm:text-4xl font-semibold leading-9 text-white">Range Comfort Sofas</p>
         </div>
       </div>
     </div>
@@ -219,5 +219,7 @@ export default function Products() {
     </button>
   </div>
 )}
+  </div>
+
 </>
 }

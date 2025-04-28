@@ -1,10 +1,11 @@
 import React from 'react'
 import Navbar from '../../Components/Shared/Navbar'
 
+
 export default function Verify() {
   return <>
   <Navbar />
-  <div className='bg-secondary  '>
+  <div className='bg-secondary overflow-x-hidden '>
   <div className="bg-form lg:px-24 px-8 flex justify-center overflow-hidden items-center">
 
  

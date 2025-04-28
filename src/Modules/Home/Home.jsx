@@ -59,7 +59,7 @@ export default function Home() {
   </div>
   <section>
     <div className='mt-8'>
-      <span className='text-4xl text-secondary flex justify-center'>Products</span>
+      <span className='text-4xl text-secondary font-bold flex justify-center'>Products</span>
       <div className="grid grid-cols-1 gap-y-10 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-4">
       <div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border border shadow-gray-500 hover:shadow-black text-gray-700 gap-4 shadow-md">
   <div className="relative mx-4 -mt-6 h-56 overflow-hidden rounded-xl bg-secondary gap-4 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
