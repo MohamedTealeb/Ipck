@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../assets/304305481_470478301760187_6739104333513463181_n.jpg';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import axios from 'axios';
 
@@ -112,6 +112,15 @@ export default function Login() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </button>
+                            <div className="mt-4 text-center">
+                                <span className="text-sm text-gray-600">Don't have an account? </span>
+                                <Link
+                                    to="/signup"
+                                    className="text-sm text-black font-semibold hover:text-white hover:bg-black hover:cursor-pointer transition duration-200 rounded-lg px-4 py-2 inline-block"
+                                >
+                                    Sign Up
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

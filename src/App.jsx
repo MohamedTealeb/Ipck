@@ -6,6 +6,7 @@ import Products from './Modules/Products/Products'
 import Product_Det from './Modules/Products/Product_Det'
 import Login from './Modules/Login/Login'
 import ProtectedRoute from './Modules/Auth/ProtectedRoute'
+import SignUp from './Modules/SignUp/SignUp'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
      <Routes>
       {/* Public Routes */}
       <Route path='login' element={<Login />}/>
+      <Route path='signup' element={<SignUp />}/>
       
       {/* Protected Routes */}
       <Route path='/' element={
@@ -37,7 +39,8 @@ function App() {
       }/>
 
       {/* Redirect any unknown routes to home */}
-      <Route path='*' element={<Navigate to="/" replace />} />
+      {/* <Route path='*' element={<Navigate to="login" replace />} /> */}
+     
      </Routes>
     </>
   )
