@@ -8,6 +8,7 @@ import Login from "./Modules/Login/Login";
 import ProtectedRoute from "./Modules/Auth/ProtectedRoute";
 import SignUp from "./Modules/SignUp/SignUp";
 import { Toaster } from "react-hot-toast";
+import Category_Det from "./Modules/Home/Category_Det";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         />
         <Route path="products" element={<Products />} />
         <Route path="product_Det/:id" element={<Product_Det />} />
+        <Route path="category_det/:id" element={<Category_Det />} />
 
         {/* Redirect any unknown routes to home */}
         {/* <Route path='*' element={<Navigate to="login" replace />} /> */}

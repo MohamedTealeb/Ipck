@@ -57,9 +57,9 @@ export default function Product_Det() {
               <h2 className="text-3xl font-bold text-gray-800">{product.name}</h2>
 
               <div className="text-sm text-gray-500 space-y-1">
-                <p>Category: <span className="font-medium text-gray-700">{product.category?.name || 'غير مصنف'}</span></p>
-                <p>Model: <span className="font-medium text-gray-700">{product.model || 'N/A'}</span></p>
-                <p>Created At: <span className="font-medium text-gray-700">{new Date(product.createdAt).toLocaleDateString()}</span></p>
+                <p>الفئات: <span className="font-medium text-gray-700">{product.category?.name || 'غير مصنف'}</span></p>
+                <p>الموديل: <span className="font-medium text-gray-700">{product.model || 'N/A'}</span></p>
+                <p>تم الإنشاء في          : <span className="font-medium text-gray-700">{new Date(product.createdAt).toLocaleDateString()}</span></p>
               </div>
 
               <div className="flex items-center gap-6">
