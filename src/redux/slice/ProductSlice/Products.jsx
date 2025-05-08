@@ -16,9 +16,7 @@ const producSlice = createSlice({
         state.error = null;
       })
       .addCase(getallproducts.fulfilled, (state, action) => {
-        state.loading = false;
-        console.log(action.payload, "all products");
-        
+        state.loading = false;       
         state.allProducts = action.payload.products;
       })
       .addCase(getallproducts.rejected, (state, action) => {

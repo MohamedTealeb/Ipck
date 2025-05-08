@@ -76,8 +76,8 @@ export default function SignUp() {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div className="min-h-screen bg-[#046584] flex flex-col justify-center sm:py-12">
-        <div className="xs:p-0 mx-auto md:w-full md:max-w-md">
+      <div className="min-h-screen bg-[#046584] flex flex-col justify-center lg:px-8 px-4 py-12">
+        <div className="xs:p-0 mx-auto lg:w-1/2 w-full">
           <img
             className="mx-auto rounded-2xl"
             style={{ width: '150px', height: '125px' }}
