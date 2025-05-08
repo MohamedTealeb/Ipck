@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getallproducts } from '../../Apis/ProductsApi/Products';
 
 export default function Product_Det() {
-  const [image, setImage] = useState(0); // index of the selected image
+  const [image, setImage] = useState(0);
   const { id } = useParams();
   const dispatch = useDispatch();
   const { allProducts, loading, error } = useSelector((state) => state.product);
@@ -15,94 +15,63 @@ export default function Product_Det() {
   }, [dispatch]);
 
   const product = allProducts.find(p => p._id === id);
+  const images = [product?.imageCover, ...(product?.images || [])];
 
-  if (loading) {
-    return <div className="text-center py-10">Loading...</div>;
-  }
-
-  if (error || !product) {
-    return <div className="text-center py-10 text-red-500">Product not found or failed to load.</div>;
-  }
-
-  const images = [product.imageCover, ...(product.images || [])];
+  if (loading) return <div className="text-center py-10 text-lg font-medium">Loading...</div>;
+  if (error || !product) return <div className="text-center py-10 text-red-500">Product not found or failed to load.</div>;
 
   return (
     <>
       <Navbar />
-      <div className="bg-secondary min-h-screen py-10">
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row -mx-4">
-            {/* Images */}
-            <div className="md:flex-1 px-4">
-              <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center overflow-hidden">
+      <div className="bg-gray-50 min-h-screen py-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row gap-10">
+            {/* Image Gallery */}
+            <div className="md:w-1/2">
+              <div className="w-full h-80 rounded-xl shadow bg-white flex items-center justify-center overflow-hidden">
                 <img
                   src={`${import.meta.env.VITE_IMAGEURL}/${images[image]}`}
                   alt="Product"
-                  className="h-full object-contain"
+                  className="max-h-full object-contain"
                 />
               </div>
-
-              <div className="flex -mx-2 mb-4">
+              <div className="flex mt-4 gap-2">
                 {images.map((img, idx) => (
-                  <div className="flex-1 px-2" key={idx}>
-                    <button
-                      onClick={() => setImage(idx)}
-                      className={`focus:outline-none w-full rounded-lg h-24 md:h-32 bg-gray-100 flex items-center justify-center overflow-hidden ${image === idx ? 'ring-2 ring-indigo-300 ring-inset' : ''}`}
-                    >
-                      <img
-                        src={`${import.meta.env.VITE_IMAGEURL}/${img}`}
-                        alt={`Thumb ${idx}`}
-                        className="h-full object-contain"
-                      />
-                    </button>
-                  </div>
+                  <button
+                    key={idx}
+                    onClick={() => setImage(idx)}
+                    className={`h-20 w-20 rounded-lg overflow-hidden border-2 ${image === idx ? 'border-indigo-500' : 'border-gray-300'} hover:border-indigo-300 transition`}
+                  >
+                    <img
+                      src={`${import.meta.env.VITE_IMAGEURL}/${img}`}
+                      alt={`Thumbnail ${idx}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </button>
                 ))}
               </div>
             </div>
 
             {/* Product Info */}
-            <div className="md:flex-1 px-4">
-              <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
-                {product.title}
-              </h2>
-              <p className="text-gray-500 text-sm mb-4">
-                Category: {product.category?.name || 'Uncategorized'}
+            <div className="md:w-1/2 bg-white rounded-xl shadow p-6 space-y-5">
+              <h2 className="text-3xl font-bold text-gray-800">{product.name}</h2>
+
+              <div className="text-sm text-gray-500 space-y-1">
+                <p>Category: <span className="font-medium text-gray-700">{product.category?.name || 'غير مصنف'}</span></p>
+                <p>Model: <span className="font-medium text-gray-700">{product.model || 'N/A'}</span></p>
+                <p>Created At: <span className="font-medium text-gray-700">{new Date(product.createdAt).toLocaleDateString()}</span></p>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <div className="text-4xl font-bold text-indigo-600">ج.م {product.price.toLocaleString()}</div>
+                <div className={`text-lg font-semibold ${product.stock > 0 ? 'text-green-600' : 'text-red-500'}`}>
+                  {product.stock > 0 ? `${product.stock} متوفر` : 'غير متوفر'}
+                </div>
+              </div>
+
+              <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
+                {product.description || 'لا يوجد وصف للمنتج.'}
               </p>
-
-              <div className="flex items-center space-x-4 my-4">
-                <div>
-                  <div className="rounded-lg bg-gray-100 flex py-2 px-3">
-                    <span className="text-indigo-400 mr-1 mt-1">$</span>
-                    <span className="font-bold text-indigo-600 text-3xl">{product.price}</span>
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <p className={`text-xl font-semibold ${product.quantity > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                    {product.quantity > 0 ? `${product.quantity} in stock` : 'Out of stock'}
-                  </p>
-                  <p className="text-gray-400 text-sm">Inclusive of all Taxes.</p>
-                </div>
-              </div>
-
-              <p className="text-gray-500 mb-4">{product.description || 'No description available.'}</p>
-
-              <div className="flex py-4 space-x-4">
-                <div className="relative">
-                  <div className="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">Qty</div>
-                  <select className="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
-                    {[1, 2, 3, 4, 5].map(n => (
-                      <option key={n}>{n}</option>
-                    ))}
-                  </select>
-                  <svg className="w-5 h-5 text-gray-400 absolute right-0 bottom-0 mb-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
-                  </svg>
-                </div>
-
-                <button type="button" className="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white">
-                  Add to Cart
-                </button>
-              </div>
             </div>
           </div>
         </div>

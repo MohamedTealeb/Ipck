@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import imge from "../../assets/Mattresses-Banner-Collection-_11.Dec.2023_2048x2048.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { getallproducts } from "../../Apis/ProductsApi/Products";
+import Footer from "../../Components/Shared/Footer";
 
 export default function Products() {
   const [modalImg, setModalImg] = useState(null);
@@ -17,7 +18,7 @@ export default function Products() {
   return (
     <>
       <Navbar />
-      <div className="bg-secondary overflow-x-hidden px-4 sm:px-6 md:px-8 xl:px-0 py-10">
+      <div className=" overflow-x-hidden px-4 sm:px-6 md:px-8 xl:px-0 py-10">
         {/* Banner */}
         <div className="relative mb-10">
           <img className="hidden sm:block w-full" src={imge} alt="Banner" />
@@ -37,11 +38,12 @@ export default function Products() {
             Error loading products.
           </p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12">
+            {allProducts.length === 0 && <p className="text-white">No Products Found</p>}
             {allProducts.map((item) => (
               <div
                 key={item._id}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-6 relative group h-[520px] flex flex-col"
+                className=" bg-secondary  rounded-2xl shadow hover:shadow-lg transition p-6 relative group h-[520px] flex flex-col"
               >
                 {/* Product Image */}
                 <Link
@@ -70,11 +72,11 @@ export default function Products() {
                   </div>
                   <div className="flex justify-between items-center mt-2">
                     <p className="text-lg font-bold text-primary dark:text-green-400">
-                      ${item.price}
+                    {item.price}  جنيه مصري 
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-300">
                       {item.stock > 0
-                        ? `${item.stock} in stock`
+                        ? `${item.stock} متوفر`
                         : "Out of stock"}
                     </p>
                   </div>
@@ -119,6 +121,7 @@ export default function Products() {
           </button>
         </div>
       )}
+      <Footer/>
     </>
   );
 }
