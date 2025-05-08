@@ -147,7 +147,7 @@ export default function Verify() {
                 type="file"
                 accept="image/*"
                 onChange={(e) => setImage(e.target.files[0])}
-                className="w-full py-2 px-3 rounded-lg bg-white outline-none border border-black"
+                className="w-full py-2 px-3 cursor-pointer rounded-lg bg-white outline-none border border-black"
                 required
               />
             </div>
