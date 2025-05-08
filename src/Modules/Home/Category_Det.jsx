@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../Components/Shared/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import imge from "../../assets/Mattresses-Banner-Collection-_11.Dec.2023_2048x2048.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { getallproducts } from "../../Apis/ProductsApi/Products";
 import Footer from "../../Components/Shared/Footer";
 
 export default function Category_Det() {
+  const { id } = useParams();
   const [modalImg, setModalImg] = useState(null);
   const dispatch = useDispatch();
-  const { allProducts, loading, error } = useSelector((state) => state.product);
+  const { allProducts, loading, error } = useSelector(state => state.product);
 
 
   useEffect(() => {
-    dispatch(getallproducts({}));
-  }, [dispatch]);
+    dispatch(getallproducts({category : id}));
+  }, [dispatch,id]);
 
   return (
     <>
@@ -126,38 +127,3 @@ export default function Category_Det() {
     </>
   );
 }
-// import React, { useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { getallproducts } from "../../Apis/ProductsApi/Products";
-
-// export default function CategoryDetails() {
-//   const { id } = useParams();
-//   const dispatch = useDispatch();
-//   const { allProducts, loading } = useSelector((state) => state.product);
-
-//   useEffect(() => {
-//     dispatch(getallproducts({ category: id }));
-//   }, [dispatch, id]);
-
-//   return (
-//     <div className="p-6">
-//       <h2 className="text-3xl font-bold text-center mb-6">منتجات الفئة</h2>
-//       {loading ? (
-//         <p className="text-center">جاري التحميل...</p>
-//       ) : allProducts.length > 0 ? (
-//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-//           {allProducts.map(product => (
-//             <div key={product._id} className="border rounded-lg p-4 shadow hover:shadow-md">
-//               <img src={`${import.meta.env.VITE_IMAGEURL}/${product.image}`} alt={product.name} className="w-full h-40 object-cover rounded" />
-//               <h3 className="text-xl mt-2 font-semibold">{product.name}</h3>
-//               <p className="text-gray-500">{product.description}</p>
-//             </div>
-//           ))}
-//         </div>
-//       ) : (
-//         <p className="text-center text-gray-500">لا توجد منتجات في هذه الفئة.</p>
-//       )}
-//     </div>
-//   );
-// }
