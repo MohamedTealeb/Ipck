@@ -6,8 +6,6 @@ export const getallproducts = createAsyncThunk(
   async ({ model, name, category, id } = {}) => {
     try {
       let url = `${import.meta.env.VITE_BASEURL}/products`;
-
-      // If id is provided, fetch a specific product
       if (id) {
         url += `/${id}`;
       } else {

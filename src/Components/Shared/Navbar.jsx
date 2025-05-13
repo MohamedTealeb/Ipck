@@ -54,14 +54,14 @@ export default function Navbar() {
                   to="/login"
                   className="text-secondary font-bold py-2 px-4 ml-0 sm:ml-4 rounded mt-2 sm:mt-0 border border-secondary hover:bg-secondary hover:text-white text-center"
                 >
-                  Login
+                  تسجيل الدخول
                 </Link>
 
                 <Link
                   to="/signup"
                   className="text-secondary font-bold py-2 px-4 ml-0 sm:ml-2 rounded mt-2 sm:mt-0 border border-secondary hover:bg-secondary hover:text-white text-center"
                 >
-                  Sign Up
+                  انشاء حساب
                 </Link>
               </>
             )}
