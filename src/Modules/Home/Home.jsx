@@ -5,21 +5,14 @@ import Navbar from '../../Components/Shared/Navbar'
 import img1 from '../../assets/view-3d-mattress-with-clouds.jpg'
 import img2 from '../../assets/beautiful-luxury-comfortable-white-pillow-blanket-decoration-interior-bedroom.jpg'
 import img3 from '../../assets/pillow-sofa.jpg'
-
 import Footer from '../../Components/Shared/Footer'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllCategories } from "../../Apis/CategoryApi/CategoryApi";
-
-
-
+import Hero from './Home-Components/Hero'
 export default function Home() {
   
-    const images = [
-        img1,
-        img2,
-        img3,
-      ];
+    
       const [currentIndex, setCurrentIndex] = useState(0);
       const dispatch = useDispatch();
       const { allCategories, loading, error }= useSelector((state) => state.category);
@@ -41,27 +34,7 @@ export default function Home() {
   <div>
     <Navbar />
   
-    <div className="relative max-h-screen flex items-center overflow-hidden justify-center  ">
-      <div className=" w-full max-h-screen ">
-        <img
-          src={images[currentIndex]}
-          alt="slider"
-          className="w-full h-full object-contain  rounded-lg transition-all duration-500"
-        />
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 cursor-pointer left-4 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full shadow-lg transition-all duration-200"
-        >
-          &#10094;
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 cursor-pointer right-4 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full shadow-lg transition-all duration-200"
-        >
-          &#10095;
-        </button>
-      </div>
-    </div>
+    <Hero />
     
   </div>
   <section>
