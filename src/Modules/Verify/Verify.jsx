@@ -36,7 +36,7 @@ export default function Verify() {
           return;
         }
 
-        console.log('Token being sent:', token); // للتحقق من الـ token
+      
 
         const response = await axios.get(
           `${import.meta.env.VITE_BASEURL}/verification/me`,
