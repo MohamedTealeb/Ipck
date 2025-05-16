@@ -87,7 +87,7 @@ export default function SignUp() {
           <div className="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
             <div className="px-5 py-7">
               {/* First Name */}
-              <label className="font-semibold text-sm text-black pb-1 block">First Name</label>
+              <label className="font-semibold text-sm text-black pb-1 block">الاسم الأول</label>
               <input
                 type="text"
                 name="firstName"
@@ -101,7 +101,7 @@ export default function SignUp() {
               )}
 
               {/* Last Name */}
-              <label className="font-semibold text-sm text-black pb-1 block">Last Name</label>
+              <label className="font-semibold text-sm text-black pb-1 block">اسم العائلة</label>
               <input
                 type="text"
                 name="lastName"
@@ -115,7 +115,7 @@ export default function SignUp() {
               )}
 
               {/* Email */}
-              <label className="font-semibold text-sm text-black pb-1 block">E-mail</label>
+              <label className="font-semibold text-sm text-black pb-1 block">بريد إلكتروني</label>
               <input
                 type="email"
                 name="email"
@@ -129,7 +129,7 @@ export default function SignUp() {
               )}
 
               {/* Password */}
-              <label className="font-semibold text-sm text-black pb-1 block">Password</label>
+              <label className="font-semibold text-sm text-black pb-1 block">كلمة المرور</label>
               <input
                 type="password"
                 name="password"
@@ -145,7 +145,7 @@ export default function SignUp() {
              
 
               {/* Phone */}
-              <label className="font-semibold text-sm text-black pb-1 block">Phone</label>
+              <label className="font-semibold text-sm text-black pb-1 block">رقم الهاتف</label>
               <input
                 type="text"
                 name="phone"
@@ -167,7 +167,7 @@ export default function SignUp() {
                 type="submit"
                 className="transition duration-200 bg-white text-black hover:cursor-pointer hover:bg-black focus:bg-black focus:shadow-sm focus:ring-4 focus:text-white focus:ring-black focus:ring-opacity-50 hover:text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block"
               >
-                <span className="inline-block mr-2">Sign Up</span>
+                <span className="inline-block mr-2">اشتراك</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -181,12 +181,12 @@ export default function SignUp() {
 
               {/* Link to Login */}
               <div className="mt-4 text-center">
-                <span className="text-sm text-gray-600">Already have an account? </span>
+                <span className="text-sm text-gray-600"> ?ليس لدي حساب  </span>
                 <Link
                   to="/login"
                   className="text-sm text-black font-semibold hover:text-white hover:bg-black hover:cursor-pointer transition duration-200 rounded-lg px-4 py-2 inline-block"
                 >
-                  Log In
+تسجيل الدخول
                 </Link>
               </div>
             </div>

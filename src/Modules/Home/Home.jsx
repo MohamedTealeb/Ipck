@@ -10,6 +10,9 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllCategories } from "../../Apis/CategoryApi/CategoryApi";
 import Hero from './Home-Components/Hero'
+import Report from '../../Components/Shared/Report'
+import { FaArrowLeft } from "react-icons/fa";
+import StatsGrid from '../../Components/Shared/StatsGrid'
 export default function Home() {
   
     
@@ -35,11 +38,11 @@ export default function Home() {
     <Navbar />
   
     <Hero />
-    
+    <StatsGrid />
   </div>
   <section>
     <div className='mt-8'>
-      <span className='text-4xl text-secondary font-bold flex justify-center'>المنتجات</span>
+      <span className='text-3xl text-secondary font-bold flex justify-center'>المنتجات</span>
       <div className="grid grid-cols-1 gap-y-10 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 mt-5 gap-x-6">
       {loading ? (
   <p className="text-center col-span-full text-gray-400">جارٍ التحميل...</p>
@@ -57,14 +60,16 @@ export default function Home() {
         <h5 className="mb-2 text-xl font-semibold text-blue-gray-900">
           {item.name || "اسم غير متوفر"}
         </h5>
+        
       </div>
-      <div className="p-6  pt-0">
-        <Link to={`/category_det/${item._id}`}>
-          <button className="rounded-lg bg-secondary cursor-pointer py-3 px-6 text-xs font-bold uppercase text-white shadow-md hover:shadow-lg transition-all">
-            اقرأ المزيد
-          </button>
-        </Link>
-      </div>
+     <div className="p-6 pt-0">
+  <Link to={`/category_det/${item._id}`}>
+    <button className="flex items-center gap-2 rounded-lg bg-secondary cursor-pointer py-3 px-6 text-xs font-bold uppercase text-white shadow-md hover:shadow-lg transition-all">
+      المزيد
+      <FaArrowLeft />
+    </button>
+  </Link>
+</div>
     </div>
   ))
 ) : (
@@ -73,6 +78,7 @@ export default function Home() {
     </div>
     </div>
   </section>
+  <Report  />
   <Footer />
   
  

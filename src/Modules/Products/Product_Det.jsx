@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../Components/Shared/Navbar';
 import { useParams } from 'react-router-dom';
@@ -17,8 +18,8 @@ export default function Product_Det() {
   const product = allProducts.find(p => p._id === id);
   const images = [product?.imageCover, ...(product?.images || [])];
 
-  if (loading) return <div className="text-center py-10 text-lg font-medium">Loading...</div>;
-  if (error || !product) return <div className="text-center py-10 text-red-500">Product not found or failed to load.</div>;
+  if (loading) return <div className="text-center py-10 text-lg font-medium">تحميل...</div>;
+  if (error || !product) return <div className="text-center py-10 text-red-500">لم يتم العثور على المنتج أو فشل تحميله.</div>;
 
   return (
     <>
@@ -59,11 +60,15 @@ export default function Product_Det() {
               <div className="text-sm text-gray-500 space-y-1">
                 <p>الفئات: <span className="font-medium text-gray-700">{product.category?.name || 'غير مصنف'}</span></p>
                 <p>الموديل: <span className="font-medium text-gray-700">{product.model || 'N/A'}</span></p>
-                <p>تم الإنشاء في          : <span className="font-medium text-gray-700">{new Date(product.createdAt).toLocaleDateString()}</span></p>
+                <p>تم الإنشاء في: <span className="font-medium text-gray-700">{new Date(product.createdAt).toLocaleDateString()}</span></p>
               </div>
 
               <div className="flex items-center gap-6">
-                <div className="text-4xl font-bold text-indigo-600">ج.م {product.price.toLocaleString()}</div>
+                <div className="text-4xl font-bold text-indigo-600">
+                  {typeof product.price === 'number'
+                    ? `ج.م ${product.price.toLocaleString()}`
+                    : 'السعر غير متوفر'}
+                </div>
                 <div className={`text-lg font-semibold ${product.stock > 0 ? 'text-green-600' : 'text-red-500'}`}>
                   {product.stock > 0 ? `${product.stock} متوفر` : 'غير متوفر'}
                 </div>

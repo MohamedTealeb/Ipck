@@ -61,7 +61,7 @@ export default function Login() {
                     />
                     <div className="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
                         <div className="px-5 py-7">
-                            <label className="font-semibold text-sm text-black pb-1 block">E-mail</label>
+                            <label className="font-semibold text-sm text-black pb-1 block">البريد الإلكتروني</label>
                             <input
                                 type="email"
                                 name="email"
@@ -76,7 +76,7 @@ export default function Login() {
                                 </div>
                             )}
 
-                            <label className="font-semibold text-sm text-black pb-1 block">Password</label>
+                            <label className="font-semibold text-sm text-black pb-1 block">كلمة المرور</label>
                             <input
                                 type="password"
                                 name="password"
@@ -101,7 +101,7 @@ export default function Login() {
                                 type="submit"
                                 className="transition duration-200 bg-white text-black hover:cursor-pointer hover:bg-black focus:bg-black focus:shadow-sm focus:ring-4 focus:text-white focus:ring-black focus:ring-opacity-50 hover:text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block"
                             >
-                                <span className="inline-block mr-2">Login</span>
+                                <span className="inline-block mr-2">دخول</span>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -113,13 +113,12 @@ export default function Login() {
                                 </svg>
                             </button>
                             <div className="mt-4 text-center">
-                                <span className="text-sm text-gray-600">Don't have an account? </span>
+                                <span className="text-sm text-gray-600"> ?ليس لدي حساب </span>
                                 <Link
                                     to="/signup"
                                     className="text-sm text-black font-semibold hover:text-white hover:bg-black hover:cursor-pointer transition duration-200 rounded-lg px-4 py-2 inline-block"
                                 >
-                                    Sign Up
-                                </Link>
+إنشاء حساب                                </Link>
                             </div>
                         </div>
                     </div>
